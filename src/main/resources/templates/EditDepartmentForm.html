@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Department-edit</title>
+</head>
+<body>
+<th:block th:insert="Header.html"></th:block>
+	<div class="container-fluid">
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h4>Department Edit</h4>
+			</div>
+			<div class="card-body">
+				<form action="/dept/update" method="Post" th:object="${dmodel}">
+
+					<div class="row p-2">
+						<div class="col-2">Department Name</div>
+						<div class="col-6">
+							<input type="text" th:field="*{deptName}" class="form-control">
+						</div>
+					</div>
+
+					<div class="row p-2">
+						<div class="col-2">Department Head(HOD)</div>
+						<div class="col-6">
+							<input type="text" th:field="*{deptHead}" class="form-control">
+						</div>
+					</div>
+
+					<div class="row p-2">
+						<div class="col-2">Department Phone</div>
+						<div class="col-6">
+							<input type="text" th:field="*{deptPhone}" class="form-control">
+						</div>
+					</div>
+
+					<div class="row p-2">
+						<div class="col-2"></div>
+						<div class="col-6">
+							<input type="submit" value="UpdateDepartment"
+								class="btn btn-success">
+						</div>
+					</div>
+					<input type="hidden" th:field="*{deptId}">
+					<!-- Here we pass id otherwise it will insert the value to the database -->
+				</form>
+			</div>
+			<div class="card-footer bg-warning text-center">copyright@2025
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
